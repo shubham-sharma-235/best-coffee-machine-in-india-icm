@@ -314,5 +314,5 @@ xpPopup.addEventListener("click", (e) => {
   });
 
   // Auto popup — every page load, after 3.5 seconds
-  setTimeout(openPopup, 3500);
+  setTimeout(openPopup, 5000);
 })();
