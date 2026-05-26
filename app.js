@@ -316,3 +316,35 @@ xpPopup.addEventListener("click", (e) => {
   // Auto popup — every page load, after 3.5 seconds
   setTimeout(openPopup, 5000);
 })();
+
+
+const trustGrid = document.querySelector(".trust-grid");
+const trustDots = document.querySelectorAll(".trust-dots span");
+
+if(trustGrid){
+
+  trustGrid.addEventListener("scroll", () => {
+
+    const cards = document.querySelectorAll(".trust-grid .tg");
+
+    let index = 0;
+
+    cards.forEach((card, i) => {
+
+      const rect = card.getBoundingClientRect();
+
+      if(rect.left >= 0 && rect.left < window.innerWidth / 2){
+        index = i;
+      }
+
+    });
+
+    trustDots.forEach(dot => dot.classList.remove("active"));
+
+    if(trustDots[index]){
+      trustDots[index].classList.add("active");
+    }
+
+  });
+
+}
